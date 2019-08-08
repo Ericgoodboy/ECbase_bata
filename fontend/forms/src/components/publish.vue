@@ -35,8 +35,8 @@ export default {
       return {
           title:"",
 classes:{
-        1:"bug反馈",
-        2:"体验反馈",
+        1:"公司内推",
+        2:"社团事件",
       }
       }
   },

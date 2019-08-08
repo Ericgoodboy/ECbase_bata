@@ -47,6 +47,11 @@
                         0
                     </div>
                 </li>
+                <li>
+                    <div class="info">
+                        <router-link to="publish"><label for="number">我要发布<i class="fa fa-handshake-o" aria-hidden="true"></i>：</label></router-link>                        
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
