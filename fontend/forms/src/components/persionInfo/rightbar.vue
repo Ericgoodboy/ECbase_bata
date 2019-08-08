@@ -3,103 +3,27 @@
     <div class="title">
       <h1>详细信息</h1>
     </div>
-    <div class="descinfo">
+    <div class="descinfo clearfix">
       <ul>
-        <li>
-          <div class="info">
-            <label for="number">Q Q ：</label>
+        <li v-for="item in descinfo" :key="item.id">
+          <div v-if="item.dtype=='shorttext'" class="info">
+            <label :for="item.name">{{ item.name }}</label>
             <div class="infoinput">
               <input
-                v-model="baseinfo.qq.value"
+                v-model="item.value"
                 type="text"
-                @blur="baseinfo.qq.showinput=false"
+                @blur="item.editing=false"
                 placeholder
-                v-show="baseinfo.qq.showinput"
+                v-show="item.editing"
               />
-              <p
-                @dblclick="baseinfo.qq.showinput=true"
-                v-show="!baseinfo.qq.showinput"
-              >{{ baseinfo.qq.value }}</p>
+
+              <p @dblclick="item.editing=true" v-show="!item.editing">{{ item.value }}</p>
             </div>
           </div>
-        </li>
-        <li>
-          <div class="info">
-            <label for="selfres">自我评价 ：</label>
+          <div v-if="item.dtype=='longtext'" class="info">
+            <label :for="item.name">{{ item.name }}</label>
             <div class="infoinput">
-              <p @dblclick="changeselfres()">{{ descinfo.selfres.value }}</p>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="info">
-            <label for="number">Q Q ：</label>
-            <div class="infoinput">
-              <input
-                v-model="baseinfo.qq.value"
-                type="text"
-                @blur="baseinfo.qq.showinput=false"
-                placeholder
-                v-show="baseinfo.qq.showinput"
-              />
-              <p
-                @dblclick="baseinfo.qq.showinput=true"
-                v-show="!baseinfo.qq.showinput"
-              >{{ baseinfo.qq.value }}</p>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="info">
-            <label for="number">Q Q ：</label>
-            <div class="infoinput">
-              <input
-                v-model="baseinfo.qq.value"
-                type="text"
-                @blur="baseinfo.qq.showinput=false"
-                placeholder
-                v-show="baseinfo.qq.showinput"
-              />
-              <p
-                @dblclick="baseinfo.qq.showinput=true"
-                v-show="!baseinfo.qq.showinput"
-              >{{ baseinfo.qq.value }}</p>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="info">
-            <label for="number">Q Q ：</label>
-            <div class="infoinput">
-              <input
-                v-model="baseinfo.qq.value"
-                type="text"
-                @blur="baseinfo.qq.showinput=false"
-                placeholder
-                v-show="baseinfo.qq.showinput"
-              />
-              <p
-                @dblclick="baseinfo.qq.showinput=true"
-                v-show="!baseinfo.qq.showinput"
-              >{{ baseinfo.qq.value }}</p>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="info">
-            <label for="number">Q Q ：</label>
-            <div class="infoinput">
-              <input
-                v-model="baseinfo.qq.value"
-                type="text"
-                @blur="baseinfo.qq.showinput=false"
-                placeholder
-                v-show="baseinfo.qq.showinput"
-              />
-              <p
-                @dblclick="baseinfo.qq.showinput=true"
-                v-show="!baseinfo.qq.showinput"
-              >{{ baseinfo.qq.value }}</p>
+              <p @dblclick="changelongtext(item)" v-show="!item.editing">{{ item.value }}</p>
             </div>
           </div>
         </li>
@@ -122,36 +46,89 @@ export default {
     return {
       maskValue: "",
       maskShow: false,
-      maskRef:"",
-      baseinfo: {
-        phone: {
-          showinput: false,
-          value: "3726890272"
+      maskRef: "",
+      descinfo: [
+        {
+          id: 1,
+          name: "姓名",
+          dtype: "shorttext",
+          value: "黄骐",
+          editing: false
         },
-        qq: {
-          showinput: false,
-          value: "3726890272"
+        {
+          name: "爱好",
+          dtype: "longtext",
+          value: "黄骐",
+          editing: false,
+          id: 2
         },
-        wx: {
-          showinput: false,
-          value: "3726890272"
+        {
+          name: "入学年份",
+          dtype: "shorttext",
+          value: "黄骐",
+          editing: false,
+          id: 3
+        },
+        {
+          name: "社团经历",
+          dtype: "longtext",
+          value: "黄骐",
+          editing: false,
+          id: 4
+        },
+        {
+          name: "社团经历",
+          dtype: "longtext",
+          value: "黄骐",
+          editing: false,
+          id: 4
+        },
+        {
+          name: "社团经历",
+          dtype: "longtext",
+          value: "黄骐",
+          editing: false,
+          id: 4
+        },
+        {
+          name: "社团经历",
+          dtype: "longtext",
+          value: "黄骐",
+          editing: false,
+          id: 4
+        },
+        {
+          name: "社团经历",
+          dtype: "longtext",
+          value: "黄骐",
+          editing: false,
+          id: 4
+        },
+        {
+          name: "社团经历",
+          dtype: "longtext",
+          value: "黄骐",
+          editing: false,
+          id: 4
         }
-      },
-      descinfo: {
-        selfres: { value: "我很帅，嗯，没有了，嗯，就是很帅呀" }
-      }
+      ]
     };
   },
   methods: {
-    changeselfres() {
+    changelongtext(item) {
       this.maskShow = true;
-      this.maskValue = this.descinfo.selfres.value;
-      this.maskRef = "selfres"
-      window.console.log(this.descinfo["selfres"].value)
+      this.maskValue = item.value;
+      this.maskRef = item.id;
     },
-    maskSave(){
-        this.descinfo[this.maskRef].value = this.maskValue;
-        this.maskShow = false
+    maskSave() {
+      for (let i = 0; i < this.descinfo.length; i++) {
+        let item = this.descinfo[i];
+        if (item.id == this.maskRef) {
+          item.value = this.maskValue;
+          this.maskShow = false;
+          break;
+        }
+      }
     }
   }
 };
@@ -166,9 +143,11 @@ export default {
   line-height: 25px;
   letter-spacing: 3px;
   height: 40px;
+  border-radius: 12px;
 }
 .infoinput {
-  display: inline;
+  display: inline-block;
+  margin-bottom: 10px;
 }
 .infoinput input {
   width: 300px !important;
@@ -187,17 +166,21 @@ export default {
   padding-top: 10px;
 }
 
-.info {
+.li {
   font-size: 15px;
-  margin-top: 5px;
+  margin-bottom: 50px !important;
+  display: block;
 }
 .info label {
   float: left;
+  min-width: 60px;
 }
 .descinfo {
+  display: block;
   width: 60%;
   margin: 0 auto;
   margin-top: 180px;
+  padding-top: 120px;
 }
 
 .mask {
@@ -225,4 +208,5 @@ textarea {
   margin: 10px auto;
   display: block;
 }
+
 </style>
