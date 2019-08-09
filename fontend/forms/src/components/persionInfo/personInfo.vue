@@ -1,5 +1,5 @@
 <template>
-    <div class="persionInfo">
+    <div class="persionInfo  clearfix">
         <v-left></v-left>
         <v-right></v-right>
     </div>
@@ -21,6 +21,6 @@
     .persionInfo{
         width: 70%;
         margin: 40px auto;
-        height: 500px;
+        /* height: 500px; */
     }
 </style>

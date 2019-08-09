@@ -95,7 +95,7 @@
 .left{
     float: left;
     display: block;
-    border-right:1px solid rgba(60, 60, 60, 60);
+    /* border-right:1px solid rgba(60, 60, 60, 60); */
     height: 100%;
     width: 18%;
     border-radius: 10px;

@@ -1,5 +1,5 @@
 <template>
-  <div class="right">
+  <div class="tright">
     <div class="title">
       <h1>详细信息</h1>
     </div>
@@ -26,6 +26,9 @@
               <p @dblclick="changelongtext(item)" v-show="!item.editing">{{ item.value }}</p>
             </div>
           </div>
+          <div v-if="item.dtype=='Mmutltext'" class="Mmutltext">
+            <Mmutltext :data="item.data"></Mmutltext>
+          </div>
         </li>
       </ul>
     </div>
@@ -40,6 +43,7 @@
 </template>
 
 <script>
+import Mmutltext from "./Mmutltext";
 export default {
   name: "right",
   data() {
@@ -77,42 +81,134 @@ export default {
           id: 4
         },
         {
-          name: "社团经历",
-          dtype: "longtext",
-          value: "黄骐",
-          editing: false,
-          id: 5
-        },
-        {
-          name: "社团经历",
+          name: "奖励经理",
           dtype: "longtext",
           value: "黄骐",
           editing: false,
           id: 6
         },
         {
-          name: "社团经历",
+          name: "政治面貌",
           dtype: "longtext",
           value: "黄骐",
           editing: false,
           id: 7
         },
         {
-          name: "社团经历",
-          dtype: "longtext",
+          name: "籍贯",
+          dtype: "shorttext",
           value: "黄骐",
           editing: false,
           id: 8
         },
         {
-          name: "社团经历",
-          dtype: "longtext",
-          value: "黄骐",
-          editing: false,
+          name: "自我介绍",
+          dtype: "Mmutltext",
+          data: {
+            name: "获奖经历",
+            id: 100,
+
+            values: [
+              {
+                id: 1,
+                data: [
+                  {
+                    name: "时间",
+                    value: "2016-02-08",
+                    id: 1
+                  },
+                  {
+                    name: "公司名称",
+                    value: "阿里",
+                    id: 2
+                  },
+                  {
+                    name: "工作时间",
+                    value: "3月",
+                    id: 3
+                  }
+                ]
+              },
+              {
+                id: 2,
+                data: [
+                  {
+                    name: "时间",
+                    value: "2016-02-08",
+                    id: 1
+                  },
+                  {
+                    name: "公司名称",
+                    value: "阿里",
+                    id: 2
+                  },
+                  {
+                    name: "工作时间",
+                    value: "3月",
+                    id: 3
+                  }
+                ]
+              }
+            ]
+          },
           id: 9
+        },
+        {
+          dtype: "Mmutltext",
+          id:10,
+          data: {
+            name: "工作经历",
+            id: 100,
+
+            values: [
+              {
+                id: 1,
+                data: [
+                  {
+                    name: "时间",
+                    value: "2016-02-08",
+                    id: 1
+                  },
+                  {
+                    name: "公司名称",
+                    value: "阿里",
+                    id: 2
+                  },
+                  {
+                    name: "工作时间",
+                    value: "3月",
+                    id: 3
+                  }
+                ]
+              },
+              {
+                id: 2,
+                data: [
+                  {
+                    name: "时间",
+                    value: "2016-02-08",
+                    id: 1
+                  },
+                  {
+                    name: "公司名称",
+                    value: "阿里",
+                    id: 2
+                  },
+                  {
+                    name: "工作时间",
+                    value: "3月",
+                    id: 3
+                  }
+                ]
+              }
+            ]
+          }
         }
       ]
     };
+  },
+  components: {
+    Mmutltext
   },
   methods: {
     changelongtext(item) {
@@ -135,8 +231,12 @@ export default {
 </script>
 
 <style scoped>
+.tright {
+  float: left;
+  border-left: #333 1px solid;
+}
 .title {
-  width: 70%;
+  width: 100%;
   float: left;
   /* margin-left: 6%; */
   border-bottom: 1px solid rgba(40, 40, 40, 0.8);
@@ -168,8 +268,12 @@ export default {
 
 .li {
   font-size: 15px;
-  margin-bottom: 50px !important;
+  margin-bottom: 90px !important;
   display: block;
+  background: #333;
+}
+.info {
+  margin-bottom: 8px;
 }
 .info label {
   float: left;
@@ -177,10 +281,10 @@ export default {
 }
 .descinfo {
   display: block;
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
-  margin-top: 180px;
-  padding-top: 120px;
+  margin-top: 120px;
+  padding-top: 20px;
 }
 
 .mask {
@@ -208,5 +312,4 @@ textarea {
   margin: 10px auto;
   display: block;
 }
-
 </style>
