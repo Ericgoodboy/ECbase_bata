@@ -23,49 +23,7 @@
         props:["data"],
         data(){
             return{
-                data:{
-                    name:"工作经历",
-                    id:100,
-                    
-                    values:[
-                        {
-                        id:1,  
-                        data:[{
-                            name:"时间",
-                            value:"2016-02-08",
-                            id:1
-                        },
-                        {
-                            name:"公司名称",
-                            value:"阿里",
-                            id:2
-                        },
-                        {
-                            name:"工作时间",
-                            value:"3月",
-                            id:3
-                        }]
-                        },
-                        {
-                        id:2,  
-                        data:[{
-                            name:"时间",
-                            value:"2016-02-08",
-                            id:1
-                        },
-                        {
-                            name:"公司名称",
-                            value:"阿里",
-                            id:2
-                        },
-                        {
-                            name:"工作时间",
-                            value:"3月",
-                            id:3
-                        }]
-                        }
-                    ]
-                }
+                
             };
         },
         // props:["data"]
