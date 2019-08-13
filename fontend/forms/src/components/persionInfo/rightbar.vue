@@ -74,20 +74,6 @@ export default {
           id: 3
         },
         {
-          name: "社团经历",
-          dtype: "longtext",
-          value: "黄骐",
-          editing: false,
-          id: 4
-        },
-        {
-          name: "奖励经理",
-          dtype: "longtext",
-          value: "黄骐",
-          editing: false,
-          id: 6
-        },
-        {
           name: "政治面貌",
           dtype: "longtext",
           value: "黄骐",
@@ -149,16 +135,34 @@ export default {
                   }
                 ]
               }
+            ],
+            cdata:[
+              {
+                    name: "时间",
+                    value: "default-time",
+                    id: 1
+                  },
+                  {
+                    name: "公司名称",
+                    value: "defaultcomp",
+                    id: 2
+                  },
+                  {
+                    name: "工作时间",
+                    value: "defaultlength",
+                    id: 3
+                  }
             ]
           },
-          id: 9
+          id: 9,
+          
         },
         {
           dtype: "Mmutltext",
           id:10,
           data: {
             name: "工作经历",
-            id: 100,
+            id: 99,
 
             values: [
               {
@@ -201,6 +205,23 @@ export default {
                   }
                 ]
               }
+            ],
+            cdata:[
+              {
+                    name: "时间",
+                    value: "default-time",
+                    id: 1
+                  },
+                  {
+                    name: "公司名称",
+                    value: "defaultcomp",
+                    id: 2
+                  },
+                  {
+                    name: "工作时间",
+                    value: "defaultlength",
+                    id: 3
+                  }
             ]
           }
         }

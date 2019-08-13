@@ -1,7 +1,7 @@
 <template>
     <div class="nav">
         <div class="placeholder"></div>
-        <div class="wraper">
+        <div class="wraper clearfix">
             <ul>
                 <li>标题</li>
                 <li>标题</li>
@@ -23,7 +23,7 @@
 
 <style  scoped>
     .nav{
-        height:40px;
+        /* height:40px; */
         width:100%;
         background: rgba(141, 120, 189, 0.486);
         display: block;
