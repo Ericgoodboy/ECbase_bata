@@ -36,7 +36,7 @@
       <div class="mask" @click="maskSave()"></div>
       <div class="content">
         <textarea v-model="maskValue" name="ads" id cols="30" rows="10"></textarea>
-        <button>保存</button>
+        <button  @click="maskSave()">保存</button>
       </div>
     </div>
   </div>

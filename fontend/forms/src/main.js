@@ -3,7 +3,7 @@ import App from './App.vue'
 import './assets/lib/resert.css'
 import './assets/lib/clearfix.css'
 import './assets/lib/css/font-awesome.min.css'
-import persionInfo from './components/persionInfo/personInfo'
+import persionInfo from './components/persioncard/personcard'
 import feedback from './components/feedback'
 import publish from './components/publish'
 import VueRouter from 'vue-router';
