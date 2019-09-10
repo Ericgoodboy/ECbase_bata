@@ -8,9 +8,16 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "core-js": "^2.6.5",
+    "ee-first": "^1.1.1",
+    "finalhandler": "^1.1.2",
+    "statuses": "^1.5.0",
+    "unpipe": "^1.0.0",
     "vue": "^2.6.10",
-    "wangeditor": "^3.1.1"
+    "wangeditor": "^3.1.1",
+    "watchpack": "^1.6.0",
+    "webpack-dev-server": "^3.8.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.10.0",
@@ -19,7 +26,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
-    "vue-router": "^3.1.1",
+    "vue-router": "^3.1.2",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
